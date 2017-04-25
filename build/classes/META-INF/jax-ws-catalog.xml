@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://200.29.161.114/SendService/ServicioEmail.svc" uri="xml-resources/web-service-references/ServicioEmail/wsdl/200.29.161.114/SendService/ServicioEmail.svc.xml"/>
+    <system systemId="http://localhost:53188/Servicio.svc" uri="xml-resources/web-service-references/Servicio_2/wsdl/localhost_53188/Servicio.svc.xml"/>
+    <system systemId="http://localhost:53188/Servicio.svc?wsdl" uri="wsdl/localhost_53188/Servicio.svc.wsdl"/>
+    <system systemId="http://localhost:53188/Servicio.svc?xsd=xsd0" uri="wsdl/localhost_53188/Servicio.svc.xsd_xsd0.xsd"/>
+    <system systemId="http://localhost:53188/Servicio.svc?xsd=xsd1" uri="wsdl/localhost_53188/Servicio.svc.xsd_xsd1.xsd"/>
+    <system systemId="http://localhost:53188/Servicio.svc?xsd=xsd2" uri="wsdl/localhost_53188/Servicio.svc.xsd_xsd2.xsd"/>
+</catalog>
