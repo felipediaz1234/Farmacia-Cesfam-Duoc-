@@ -50,14 +50,16 @@ public class ObjectFactory {
     private final static QName _QName_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "QName");
     private final static QName _AnyType_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "anyType");
     private final static QName _String_QNAME = new QName("http://schemas.microsoft.com/2003/10/Serialization/", "string");
-    private final static QName _ValidarUsuarioPas_QNAME = new QName("http://tempuri.org/", "pas");
-    private final static QName _ValidarUsuarioUsu_QNAME = new QName("http://tempuri.org/", "usu");
+    private final static QName _UpdateUSerPass_QNAME = new QName("http://tempuri.org/", "Pass");
+    private final static QName _UpdateUSerUserName_QNAME = new QName("http://tempuri.org/", "userName");
+    private final static QName _CrearMedicamentoNomGenerico_QNAME = new QName("http://tempuri.org/", "nomGenerico");
+    private final static QName _CrearMedicamentoLaboratorio_QNAME = new QName("http://tempuri.org/", "laboratorio");
+    private final static QName _CrearMedicamentoNombre_QNAME = new QName("http://tempuri.org/", "nombre");
     private final static QName _CrearFuncionarioPaterno_QNAME = new QName("http://tempuri.org/", "paterno");
     private final static QName _CrearFuncionarioMaterno_QNAME = new QName("http://tempuri.org/", "materno");
     private final static QName _CrearFuncionarioDireccion_QNAME = new QName("http://tempuri.org/", "direccion");
-    private final static QName _CrearFuncionarioNombre_QNAME = new QName("http://tempuri.org/", "nombre");
-    private final static QName _CreateUserPass_QNAME = new QName("http://tempuri.org/", "Pass");
-    private final static QName _CreateUserUserName_QNAME = new QName("http://tempuri.org/", "userName");
+    private final static QName _ValidarUsuarioPas_QNAME = new QName("http://tempuri.org/", "pas");
+    private final static QName _ValidarUsuarioUsu_QNAME = new QName("http://tempuri.org/", "usu");
     private final static QName _UsuarioPass_QNAME = new QName("http://schemas.datacontract.org/2004/07/Capa.Entities", "Pass");
     private final static QName _UsuarioUserName_QNAME = new QName("http://schemas.datacontract.org/2004/07/Capa.Entities", "User_Name");
     private final static QName _UpdateUSerResponseUpdateUSerResult_QNAME = new QName("http://tempuri.org/", "UpdateUSerResult");
@@ -68,6 +70,14 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link CrearMedicamentoResponse }
+     * 
+     */
+    public CrearMedicamentoResponse createCrearMedicamentoResponse() {
+        return new CrearMedicamentoResponse();
     }
 
     /**
@@ -108,6 +118,14 @@ public class ObjectFactory {
      */
     public DeleteFuncionario createDeleteFuncionario() {
         return new DeleteFuncionario();
+    }
+
+    /**
+     * Create an instance of {@link CrearMedicamento }
+     * 
+     */
+    public CrearMedicamento createCrearMedicamento() {
+        return new CrearMedicamento();
     }
 
     /**
@@ -392,18 +410,63 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "pas", scope = ValidarUsuario.class)
-    public JAXBElement<String> createValidarUsuarioPas(String value) {
-        return new JAXBElement<String>(_ValidarUsuarioPas_QNAME, String.class, ValidarUsuario.class, value);
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "Pass", scope = UpdateUSer.class)
+    public JAXBElement<String> createUpdateUSerPass(String value) {
+        return new JAXBElement<String>(_UpdateUSerPass_QNAME, String.class, UpdateUSer.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "usu", scope = ValidarUsuario.class)
-    public JAXBElement<String> createValidarUsuarioUsu(String value) {
-        return new JAXBElement<String>(_ValidarUsuarioUsu_QNAME, String.class, ValidarUsuario.class, value);
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "userName", scope = UpdateUSer.class)
+    public JAXBElement<String> createUpdateUSerUserName(String value) {
+        return new JAXBElement<String>(_UpdateUSerUserName_QNAME, String.class, UpdateUSer.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "Pass", scope = CreateUser.class)
+    public JAXBElement<String> createCreateUserPass(String value) {
+        return new JAXBElement<String>(_UpdateUSerPass_QNAME, String.class, CreateUser.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "userName", scope = CreateUser.class)
+    public JAXBElement<String> createCreateUserUserName(String value) {
+        return new JAXBElement<String>(_UpdateUSerUserName_QNAME, String.class, CreateUser.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "nomGenerico", scope = CrearMedicamento.class)
+    public JAXBElement<String> createCrearMedicamentoNomGenerico(String value) {
+        return new JAXBElement<String>(_CrearMedicamentoNomGenerico_QNAME, String.class, CrearMedicamento.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "laboratorio", scope = CrearMedicamento.class)
+    public JAXBElement<String> createCrearMedicamentoLaboratorio(String value) {
+        return new JAXBElement<String>(_CrearMedicamentoLaboratorio_QNAME, String.class, CrearMedicamento.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "nombre", scope = CrearMedicamento.class)
+    public JAXBElement<String> createCrearMedicamentoNombre(String value) {
+        return new JAXBElement<String>(_CrearMedicamentoNombre_QNAME, String.class, CrearMedicamento.class, value);
     }
 
     /**
@@ -439,25 +502,25 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://tempuri.org/", name = "nombre", scope = CrearFuncionario.class)
     public JAXBElement<String> createCrearFuncionarioNombre(String value) {
-        return new JAXBElement<String>(_CrearFuncionarioNombre_QNAME, String.class, CrearFuncionario.class, value);
+        return new JAXBElement<String>(_CrearMedicamentoNombre_QNAME, String.class, CrearFuncionario.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "Pass", scope = CreateUser.class)
-    public JAXBElement<String> createCreateUserPass(String value) {
-        return new JAXBElement<String>(_CreateUserPass_QNAME, String.class, CreateUser.class, value);
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "pas", scope = ValidarUsuario.class)
+    public JAXBElement<String> createValidarUsuarioPas(String value) {
+        return new JAXBElement<String>(_ValidarUsuarioPas_QNAME, String.class, ValidarUsuario.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "userName", scope = CreateUser.class)
-    public JAXBElement<String> createCreateUserUserName(String value) {
-        return new JAXBElement<String>(_CreateUserUserName_QNAME, String.class, CreateUser.class, value);
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "usu", scope = ValidarUsuario.class)
+    public JAXBElement<String> createValidarUsuarioUsu(String value) {
+        return new JAXBElement<String>(_ValidarUsuarioUsu_QNAME, String.class, ValidarUsuario.class, value);
     }
 
     /**
@@ -485,24 +548,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://tempuri.org/", name = "UpdateUSerResult", scope = UpdateUSerResponse.class)
     public JAXBElement<String> createUpdateUSerResponseUpdateUSerResult(String value) {
         return new JAXBElement<String>(_UpdateUSerResponseUpdateUSerResult_QNAME, String.class, UpdateUSerResponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "Pass", scope = UpdateUSer.class)
-    public JAXBElement<String> createUpdateUSerPass(String value) {
-        return new JAXBElement<String>(_CreateUserPass_QNAME, String.class, UpdateUSer.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "userName", scope = UpdateUSer.class)
-    public JAXBElement<String> createUpdateUSerUserName(String value) {
-        return new JAXBElement<String>(_CreateUserUserName_QNAME, String.class, UpdateUSer.class, value);
     }
 
     /**

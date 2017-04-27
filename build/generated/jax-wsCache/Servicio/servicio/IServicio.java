@@ -7,6 +7,7 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 
@@ -157,5 +158,31 @@ public interface IServicio {
     public Boolean deleteFuncionario(
         @WebParam(name = "id", targetNamespace = "http://tempuri.org/")
         BigDecimal id);
+
+    /**
+     * 
+     * @param fecVencimiento
+     * @param nomGenerico
+     * @param id
+     * @param laboratorio
+     * @param nombre
+     * @return
+     *     returns java.lang.Boolean
+     */
+    @WebMethod(operationName = "CrearMedicamento", action = "http://tempuri.org/IServicio/CrearMedicamento")
+    @WebResult(name = "CrearMedicamentoResult", targetNamespace = "http://tempuri.org/")
+    @RequestWrapper(localName = "CrearMedicamento", targetNamespace = "http://tempuri.org/", className = "servicio.CrearMedicamento")
+    @ResponseWrapper(localName = "CrearMedicamentoResponse", targetNamespace = "http://tempuri.org/", className = "servicio.CrearMedicamentoResponse")
+    public Boolean crearMedicamento(
+        @WebParam(name = "id", targetNamespace = "http://tempuri.org/")
+        Integer id,
+        @WebParam(name = "nombre", targetNamespace = "http://tempuri.org/")
+        String nombre,
+        @WebParam(name = "nomGenerico", targetNamespace = "http://tempuri.org/")
+        String nomGenerico,
+        @WebParam(name = "fec_vencimiento", targetNamespace = "http://tempuri.org/")
+        XMLGregorianCalendar fecVencimiento,
+        @WebParam(name = "laboratorio", targetNamespace = "http://tempuri.org/")
+        String laboratorio);
 
 }

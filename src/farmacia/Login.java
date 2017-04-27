@@ -119,6 +119,11 @@ public class Login extends javax.swing.JFrame {
       String pass    = txtPassword.getText();
       String nombreDefecto="Felipe";
       String passDefecto="12345";
+      validarUsuario(usuario,pass);
+ 
+      
+      
+      
       if(usuario.equals(nombreDefecto) && pass.equals(passDefecto)){
           Index d = new Index();
           this.setVisible(false);
@@ -178,4 +183,12 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
+
+    private static Boolean validarUsuario(java.lang.String usu, java.lang.String pas) {
+        //JOptionPane.showMessageDialog(null, usu+" "+pas, "Error", JOptionPane.ERROR_MESSAGE);
+        servicio.Servicio service = new servicio.Servicio();
+        servicio.IServicio port = service.getBasicHttpBindingIServicio();
+        return port.validarUsuario(usu, pas);
+                
+    }
 }
