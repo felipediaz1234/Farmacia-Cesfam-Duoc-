@@ -11,12 +11,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para Usuario complex type.
+ * <p>Clase Java para UsuarioDAO complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="Usuario">
+ * &lt;complexType name="UsuarioDAO">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -33,21 +33,21 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Usuario", namespace = "http://schemas.datacontract.org/2004/07/Capa.Entities", propOrder = {
+@XmlType(name = "UsuarioDAO", namespace = "http://schemas.datacontract.org/2004/07/Capa.Negocio", propOrder = {
     "codUser",
     "pass",
     "tipoUser",
     "userName"
 })
-public class Usuario {
+public class UsuarioDAO {
 
     @XmlElement(name = "Cod_User")
     protected BigDecimal codUser;
-    @XmlElementRef(name = "Pass", namespace = "http://schemas.datacontract.org/2004/07/Capa.Entities", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "Pass", namespace = "http://schemas.datacontract.org/2004/07/Capa.Negocio", type = JAXBElement.class, required = false)
     protected JAXBElement<String> pass;
     @XmlElement(name = "Tipo_User")
     protected BigDecimal tipoUser;
-    @XmlElementRef(name = "User_Name", namespace = "http://schemas.datacontract.org/2004/07/Capa.Entities", type = JAXBElement.class, required = false)
+    @XmlElementRef(name = "User_Name", namespace = "http://schemas.datacontract.org/2004/07/Capa.Negocio", type = JAXBElement.class, required = false)
     protected JAXBElement<String> userName;
 
     /**

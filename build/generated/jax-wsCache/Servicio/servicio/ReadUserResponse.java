@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="ReadUserResult" type="{http://schemas.datacontract.org/2004/07/Capa.Entities}Usuario" minOccurs="0"/>
+ *         &lt;element name="ReadUserResult" type="{http://schemas.datacontract.org/2004/07/Capa.Negocio}UsuarioDAO" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,17 +36,17 @@ import javax.xml.bind.annotation.XmlType;
 public class ReadUserResponse {
 
     @XmlElementRef(name = "ReadUserResult", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
-    protected JAXBElement<Usuario> readUserResult;
+    protected JAXBElement<UsuarioDAO> readUserResult;
 
     /**
      * Obtiene el valor de la propiedad readUserResult.
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link Usuario }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UsuarioDAO }{@code >}
      *     
      */
-    public JAXBElement<Usuario> getReadUserResult() {
+    public JAXBElement<UsuarioDAO> getReadUserResult() {
         return readUserResult;
     }
 
@@ -55,10 +55,10 @@ public class ReadUserResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link Usuario }{@code >}
+     *     {@link JAXBElement }{@code <}{@link UsuarioDAO }{@code >}
      *     
      */
-    public void setReadUserResult(JAXBElement<Usuario> value) {
+    public void setReadUserResult(JAXBElement<UsuarioDAO> value) {
         this.readUserResult = value;
     }
 

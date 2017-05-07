@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="ReadUserResult" type="{http://schemas.datacontract.org/2004/07/Capa.Negocio}UsuarioDAO" minOccurs="0"/>
+ *         &lt;element name="ReadFuncionarioResult" type="{http://schemas.datacontract.org/2004/07/Capa.Negocio}Funcionario" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -30,36 +30,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "readUserResult"
+    "readFuncionarioResult"
 })
-@XmlRootElement(name = "ReadUserResponse")
-public class ReadUserResponse {
+@XmlRootElement(name = "ReadFuncionarioResponse")
+public class ReadFuncionarioResponse {
 
-    @XmlElementRef(name = "ReadUserResult", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
-    protected JAXBElement<UsuarioDAO> readUserResult;
+    @XmlElementRef(name = "ReadFuncionarioResult", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
+    protected JAXBElement<Funcionario> readFuncionarioResult;
 
     /**
-     * Obtiene el valor de la propiedad readUserResult.
+     * Obtiene el valor de la propiedad readFuncionarioResult.
      * 
      * @return
      *     possible object is
-     *     {@link JAXBElement }{@code <}{@link UsuarioDAO }{@code >}
+     *     {@link JAXBElement }{@code <}{@link Funcionario }{@code >}
      *     
      */
-    public JAXBElement<UsuarioDAO> getReadUserResult() {
-        return readUserResult;
+    public JAXBElement<Funcionario> getReadFuncionarioResult() {
+        return readFuncionarioResult;
     }
 
     /**
-     * Define el valor de la propiedad readUserResult.
+     * Define el valor de la propiedad readFuncionarioResult.
      * 
      * @param value
      *     allowed object is
-     *     {@link JAXBElement }{@code <}{@link UsuarioDAO }{@code >}
+     *     {@link JAXBElement }{@code <}{@link Funcionario }{@code >}
      *     
      */
-    public void setReadUserResult(JAXBElement<UsuarioDAO> value) {
-        this.readUserResult = value;
+    public void setReadFuncionarioResult(JAXBElement<Funcionario> value) {
+        this.readFuncionarioResult = value;
     }
 
 }

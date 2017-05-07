@@ -1,15 +1,13 @@
 
 package servicio;
 
+import java.math.BigDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementRef;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
@@ -22,10 +20,10 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
  *         &lt;element name="nombre" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="nomGenerico" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="fec_vencimiento" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
+ *         &lt;element name="fec_vencimiento" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="laboratorio" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
@@ -46,14 +44,13 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @XmlRootElement(name = "CrearMedicamento")
 public class CrearMedicamento {
 
-    protected Integer id;
+    protected BigDecimal id;
     @XmlElementRef(name = "nombre", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
     protected JAXBElement<String> nombre;
     @XmlElementRef(name = "nomGenerico", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
     protected JAXBElement<String> nomGenerico;
-    @XmlElement(name = "fec_vencimiento")
-    @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar fecVencimiento;
+    @XmlElementRef(name = "fec_vencimiento", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
+    protected JAXBElement<String> fecVencimiento;
     @XmlElementRef(name = "laboratorio", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
     protected JAXBElement<String> laboratorio;
 
@@ -62,10 +59,10 @@ public class CrearMedicamento {
      * 
      * @return
      *     possible object is
-     *     {@link Integer }
+     *     {@link BigDecimal }
      *     
      */
-    public Integer getId() {
+    public BigDecimal getId() {
         return id;
     }
 
@@ -74,10 +71,10 @@ public class CrearMedicamento {
      * 
      * @param value
      *     allowed object is
-     *     {@link Integer }
+     *     {@link BigDecimal }
      *     
      */
-    public void setId(Integer value) {
+    public void setId(BigDecimal value) {
         this.id = value;
     }
 
@@ -134,10 +131,10 @@ public class CrearMedicamento {
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public XMLGregorianCalendar getFecVencimiento() {
+    public JAXBElement<String> getFecVencimiento() {
         return fecVencimiento;
     }
 
@@ -146,10 +143,10 @@ public class CrearMedicamento {
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link JAXBElement }{@code <}{@link String }{@code >}
      *     
      */
-    public void setFecVencimiento(XMLGregorianCalendar value) {
+    public void setFecVencimiento(JAXBElement<String> value) {
         this.fecVencimiento = value;
     }
 

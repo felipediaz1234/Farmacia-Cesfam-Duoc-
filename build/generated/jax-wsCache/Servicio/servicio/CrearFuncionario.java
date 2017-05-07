@@ -1,7 +1,6 @@
 
 package servicio;
 
-import java.math.BigDecimal;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -20,12 +19,12 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="cod" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="cod" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *         &lt;element name="nombre" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="paterno" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="materno" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="direccion" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="telefono" type="{http://www.w3.org/2001/XMLSchema}decimal" minOccurs="0"/>
+ *         &lt;element name="telefono" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -46,7 +45,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "CrearFuncionario")
 public class CrearFuncionario {
 
-    protected BigDecimal cod;
+    protected Integer cod;
     @XmlElementRef(name = "nombre", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
     protected JAXBElement<String> nombre;
     @XmlElementRef(name = "paterno", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
@@ -55,17 +54,17 @@ public class CrearFuncionario {
     protected JAXBElement<String> materno;
     @XmlElementRef(name = "direccion", namespace = "http://tempuri.org/", type = JAXBElement.class, required = false)
     protected JAXBElement<String> direccion;
-    protected BigDecimal telefono;
+    protected Integer telefono;
 
     /**
      * Obtiene el valor de la propiedad cod.
      * 
      * @return
      *     possible object is
-     *     {@link BigDecimal }
+     *     {@link Integer }
      *     
      */
-    public BigDecimal getCod() {
+    public Integer getCod() {
         return cod;
     }
 
@@ -74,10 +73,10 @@ public class CrearFuncionario {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigDecimal }
+     *     {@link Integer }
      *     
      */
-    public void setCod(BigDecimal value) {
+    public void setCod(Integer value) {
         this.cod = value;
     }
 
@@ -182,10 +181,10 @@ public class CrearFuncionario {
      * 
      * @return
      *     possible object is
-     *     {@link BigDecimal }
+     *     {@link Integer }
      *     
      */
-    public BigDecimal getTelefono() {
+    public Integer getTelefono() {
         return telefono;
     }
 
@@ -194,10 +193,10 @@ public class CrearFuncionario {
      * 
      * @param value
      *     allowed object is
-     *     {@link BigDecimal }
+     *     {@link Integer }
      *     
      */
-    public void setTelefono(BigDecimal value) {
+    public void setTelefono(Integer value) {
         this.telefono = value;
     }
 

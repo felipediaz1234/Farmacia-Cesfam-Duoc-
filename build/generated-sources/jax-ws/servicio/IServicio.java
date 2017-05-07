@@ -7,7 +7,6 @@ import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.datatype.XMLGregorianCalendar;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
 
@@ -92,13 +91,13 @@ public interface IServicio {
      * 
      * @param cod
      * @return
-     *     returns servicio.Usuario
+     *     returns servicio.UsuarioDAO
      */
     @WebMethod(operationName = "ReadUser", action = "http://tempuri.org/IServicio/ReadUser")
     @WebResult(name = "ReadUserResult", targetNamespace = "http://tempuri.org/")
     @RequestWrapper(localName = "ReadUser", targetNamespace = "http://tempuri.org/", className = "servicio.ReadUser")
     @ResponseWrapper(localName = "ReadUserResponse", targetNamespace = "http://tempuri.org/", className = "servicio.ReadUserResponse")
-    public Usuario readUser(
+    public UsuarioDAO readUser(
         @WebParam(name = "cod", targetNamespace = "http://tempuri.org/")
         BigDecimal cod);
 
@@ -133,7 +132,7 @@ public interface IServicio {
     @ResponseWrapper(localName = "CrearFuncionarioResponse", targetNamespace = "http://tempuri.org/", className = "servicio.CrearFuncionarioResponse")
     public Boolean crearFuncionario(
         @WebParam(name = "cod", targetNamespace = "http://tempuri.org/")
-        BigDecimal cod,
+        Integer cod,
         @WebParam(name = "nombre", targetNamespace = "http://tempuri.org/")
         String nombre,
         @WebParam(name = "paterno", targetNamespace = "http://tempuri.org/")
@@ -143,7 +142,7 @@ public interface IServicio {
         @WebParam(name = "direccion", targetNamespace = "http://tempuri.org/")
         String direccion,
         @WebParam(name = "telefono", targetNamespace = "http://tempuri.org/")
-        BigDecimal telefono);
+        Integer telefono);
 
     /**
      * 
@@ -175,13 +174,79 @@ public interface IServicio {
     @ResponseWrapper(localName = "CrearMedicamentoResponse", targetNamespace = "http://tempuri.org/", className = "servicio.CrearMedicamentoResponse")
     public Boolean crearMedicamento(
         @WebParam(name = "id", targetNamespace = "http://tempuri.org/")
-        Integer id,
+        BigDecimal id,
         @WebParam(name = "nombre", targetNamespace = "http://tempuri.org/")
         String nombre,
         @WebParam(name = "nomGenerico", targetNamespace = "http://tempuri.org/")
         String nomGenerico,
         @WebParam(name = "fec_vencimiento", targetNamespace = "http://tempuri.org/")
-        XMLGregorianCalendar fecVencimiento,
+        String fecVencimiento,
+        @WebParam(name = "laboratorio", targetNamespace = "http://tempuri.org/")
+        String laboratorio);
+
+    /**
+     * 
+     * @param id
+     * @return
+     *     returns servicio.Funcionario
+     */
+    @WebMethod(operationName = "ReadFuncionario", action = "http://tempuri.org/IServicio/ReadFuncionario")
+    @WebResult(name = "ReadFuncionarioResult", targetNamespace = "http://tempuri.org/")
+    @RequestWrapper(localName = "ReadFuncionario", targetNamespace = "http://tempuri.org/", className = "servicio.ReadFuncionario")
+    @ResponseWrapper(localName = "ReadFuncionarioResponse", targetNamespace = "http://tempuri.org/", className = "servicio.ReadFuncionarioResponse")
+    public Funcionario readFuncionario(
+        @WebParam(name = "id", targetNamespace = "http://tempuri.org/")
+        BigDecimal id);
+
+    /**
+     * 
+     * @param codFuncionario
+     * @param codReserva
+     * @param cant
+     * @param codMedicamento
+     * @param codPaciente
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "CrearReservaMedicamento", action = "http://tempuri.org/IServicio/CrearReservaMedicamento")
+    @WebResult(name = "CrearReservaMedicamentoResult", targetNamespace = "http://tempuri.org/")
+    @RequestWrapper(localName = "CrearReservaMedicamento", targetNamespace = "http://tempuri.org/", className = "servicio.CrearReservaMedicamento")
+    @ResponseWrapper(localName = "CrearReservaMedicamentoResponse", targetNamespace = "http://tempuri.org/", className = "servicio.CrearReservaMedicamentoResponse")
+    public String crearReservaMedicamento(
+        @WebParam(name = "cod_Reserva", targetNamespace = "http://tempuri.org/")
+        Integer codReserva,
+        @WebParam(name = "cod_Funcionario", targetNamespace = "http://tempuri.org/")
+        Integer codFuncionario,
+        @WebParam(name = "cod_Paciente", targetNamespace = "http://tempuri.org/")
+        Integer codPaciente,
+        @WebParam(name = "cod_Medicamento", targetNamespace = "http://tempuri.org/")
+        Integer codMedicamento,
+        @WebParam(name = "cant", targetNamespace = "http://tempuri.org/")
+        Integer cant);
+
+    /**
+     * 
+     * @param nMedicamento
+     * @param fVencimiento
+     * @param id
+     * @param laboratorio
+     * @param nGenerico
+     * @return
+     *     returns java.lang.Boolean
+     */
+    @WebMethod(operationName = "UpdateMedicamento", action = "http://tempuri.org/IServicio/UpdateMedicamento")
+    @WebResult(name = "UpdateMedicamentoResult", targetNamespace = "http://tempuri.org/")
+    @RequestWrapper(localName = "UpdateMedicamento", targetNamespace = "http://tempuri.org/", className = "servicio.UpdateMedicamento")
+    @ResponseWrapper(localName = "UpdateMedicamentoResponse", targetNamespace = "http://tempuri.org/", className = "servicio.UpdateMedicamentoResponse")
+    public Boolean updateMedicamento(
+        @WebParam(name = "id", targetNamespace = "http://tempuri.org/")
+        Integer id,
+        @WebParam(name = "nMedicamento", targetNamespace = "http://tempuri.org/")
+        String nMedicamento,
+        @WebParam(name = "nGenerico", targetNamespace = "http://tempuri.org/")
+        String nGenerico,
+        @WebParam(name = "fVencimiento", targetNamespace = "http://tempuri.org/")
+        String fVencimiento,
         @WebParam(name = "laboratorio", targetNamespace = "http://tempuri.org/")
         String laboratorio);
 
